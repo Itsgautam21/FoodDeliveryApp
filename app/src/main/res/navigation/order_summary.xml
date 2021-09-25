@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/order_summary"
+    app:startDestination="@id/detailShowFragment">
+
+    <fragment
+        android:id="@+id/orderSummary"
+        android:name="com.example.loginApp.ui.home.OrderSummary"
+        android:label="Order Summary"
+        tools:layout="@layout/fragment_order_summary" >
+
+    </fragment>
+    <fragment
+        android:id="@+id/showAddressFragment"
+        android:name="com.example.loginApp.ui.slideshow.ShowAddressFragment"
+        android:label="My Addresses"
+        tools:layout="@layout/fragment_show_address" >
+        <argument
+            android:name="pageInfo"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAddressFragment"
+        android:name="com.example.loginApp.ui.slideshow.AddAddressFragment"
+        android:label="Add Address"
+        tools:layout="@layout/fragment_add_adress" />
+    <fragment
+        android:id="@+id/detailShowFragment"
+        android:name="com.example.loginApp.ui.home.DetailShowFragment"
+        android:label="Food Detail"
+        tools:layout="@layout/fragment_detail_show" >
+    </fragment>
+
+
+</navigation>

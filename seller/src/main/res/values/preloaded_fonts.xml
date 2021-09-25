@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/amiko_bold</item>
+        <item>@font/candal</item>
+        <item>@font/comfortaa_light</item>
+        <item>@font/hammersmith_one</item>
+        <item>@font/muli_black</item>
+    </array>
+</resources>

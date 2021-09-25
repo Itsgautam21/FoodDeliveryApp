@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.loginApp.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_shopFragment"
+            app:destination="@id/shopFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.loginApp.ui.gallery.GalleryFragment"
+        android:label="@string/menu_MyOrder"
+        tools:layout="@layout/fragment_gallery" >
+        <action
+            android:id="@+id/action_nav_gallery_to_orderDetailFragment"
+            app:destination="@id/orderDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.loginApp.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" >
+
+        <action
+            android:id="@+id/action_nav_slideshow_to_showAddressFragment"
+            app:destination="@id/showAddressFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addAddressFragment"
+        android:name="com.example.loginApp.ui.slideshow.AddAddressFragment"
+        android:label="Add Address"
+        tools:layout="@layout/fragment_add_adress">
+
+        <argument
+            android:name="name"
+            app:argType="string" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/showAddressFragment"
+        android:name="com.example.loginApp.ui.slideshow.ShowAddressFragment"
+        android:label="All Address"
+        tools:layout="@layout/fragment_show_address" >
+
+        <argument
+            android:name="pageInfo"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_showAddressFragment_to_addAddressFragment2"
+            app:destination="@id/addAddressFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shopFragment"
+        android:name="com.example.loginApp.ui.home.ShopFragment"
+        android:label=""
+        tools:layout="@layout/fragment_shop">
+        <argument
+            android:name="phoneNo"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_shopFragment_to_detailShowFragment"
+            app:destination="@id/detailShowFragment" />
+        <action
+            android:id="@+id/action_shopFragment_to_cartFragment2"
+            app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_shopFragment_to_cartFragment"
+            app:destination="@id/cartFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailShowFragment"
+        android:name="com.example.loginApp.ui.home.DetailShowFragment"
+        android:label=""
+        tools:layout="@layout/fragment_detail_show" >
+        <argument
+            android:name="key"
+            app:argType="string" />
+        <argument
+            android:name="phoneNo"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_detailShowFragment_to_orderSummary"
+            app:destination="@id/orderSummary" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/orderSummary"
+        android:name="com.example.loginApp.ui.home.OrderSummary"
+        android:label=""
+        tools:layout="@layout/fragment_order_summary" >
+        <argument
+            android:name="key"
+            app:argType="string" />
+
+        <argument
+            android:name="phoneNo"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.loginApp.ui.home.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" >
+        <argument
+            android:name="phone"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_cartFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderDetailFragment"
+        android:name="com.example.loginApp.ui.gallery.OrderDetailFragment"
+        android:label="fragment_order_detail"
+        tools:layout="@layout/fragment_order_detail" >
+        <argument
+            android:name="key"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.example.loginApp.ui.home.PaymentFragment"
+        android:label="Payment"
+        tools:layout="@layout/fragment_payment" >
+        <argument
+            android:name="phoneNo"
+            app:argType="string" />
+        <argument
+            android:name="price"
+            app:argType="string" />
+    </fragment>
+</navigation>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cart_navigation"
+    app:startDestination="@id/cartFragment">
+
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.loginApp.ui.home.CartFragment"
+        android:label="My Cart"
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/action_cartFragment_to_showAddressFragment"
+            app:destination="@id/showAddressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showAddressFragment"
+        android:name="com.example.loginApp.ui.slideshow.ShowAddressFragment"
+        android:label="My Address"
+        tools:layout="@layout/fragment_show_address" >
+        <action
+            android:id="@+id/action_showAddressFragment_to_addAddressFragment"
+            app:destination="@id/addAddressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAddressFragment"
+        android:name="com.example.loginApp.ui.slideshow.AddAddressFragment"
+        android:label="Add Address"
+        tools:layout="@layout/fragment_add_adress" />
+</navigation>

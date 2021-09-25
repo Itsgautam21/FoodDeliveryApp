@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_navigation"
+    app:startDestination="@id/loginHomeFragment">
+
+
+    <fragment
+        android:id="@+id/loginHomeFragment"
+        android:name="com.example.seller.Login.ui.main.LoginHomeFragment"
+        android:label="fragment_login_home"
+        tools:layout="@layout/fragment_login_home">
+
+        <action
+            android:id="@+id/action_loginHomeFragment_to_codeFragment"
+            app:destination="@id/codeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.seller.Login.ui.main.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up">
+
+    </fragment>
+    <fragment
+        android:id="@+id/codeFragment"
+        android:name="com.example.seller.Login.ui.main.CodeFragment"
+        android:label="fragment_code"
+        tools:layout="@layout/fragment_code">
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <argument
+            android:name="password"
+            app:argType="string" />
+        <argument
+            android:name="phoneNo"
+            app:argType="string" />
+    </fragment>
+</navigation>
